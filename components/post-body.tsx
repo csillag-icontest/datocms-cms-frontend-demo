@@ -1,6 +1,11 @@
 import { StructuredText, Image } from "react-datocms";
 
-export default function PostBody({ content }) {
+interface PostBodyProps {
+  content: any; // TODO: find out real type
+}
+
+export default function PostBody(props: PostBodyProps) {
+  const { content } = props;
   return (
     <div className="max-w-2xl mx-auto">
       <div className="prose prose-lg prose-blue">

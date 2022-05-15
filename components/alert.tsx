@@ -1,7 +1,12 @@
 import Container from "./container";
 import cn from "classnames";
 
-export default function Alert({ preview }) {
+interface AlertProps {
+    preview: boolean;
+}
+
+export default function Alert(props: AlertProps) {
+    const { preview } = props;
   return (
     <div
       className={cn("border-b", {
