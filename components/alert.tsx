@@ -2,11 +2,11 @@ import Container from "./container";
 import cn from "classnames";
 
 interface AlertProps {
-    preview: boolean;
+  preview: boolean;
 }
 
 export default function Alert(props: AlertProps) {
-    const { preview } = props;
+  const { preview } = props;
   return (
     <div
       className={cn("border-b", {
@@ -19,6 +19,7 @@ export default function Alert(props: AlertProps) {
           {preview ? (
             <>
               This is page is showing draft content.{" "}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a
                 href="/api/exit-preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
@@ -30,6 +31,7 @@ export default function Alert(props: AlertProps) {
           ) : (
             <>
               This is page is showing published content.{" "}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a
                 href="/api/preview"
                 className="underline hover:text-cyan duration-200 transition-colors"

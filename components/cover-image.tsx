@@ -11,6 +11,7 @@ interface CoverImageProps {
 export default function CoverImage(props: CoverImageProps) {
   const { title, slug, responsiveImage } = props;
   const image = (
+    // eslint-disable-next-line jsx-a11y/alt-text
     <Image
       data={{
         ...responsiveImage,

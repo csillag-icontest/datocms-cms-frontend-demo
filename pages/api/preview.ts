@@ -1,4 +1,4 @@
-export default async (req, res) => {
+const enterPreviewMode = async (req, res) => {
   // Please set the NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET env variable
   // on Vercel/Netlify, or everyone will be able to enter Preview Mode and
   // see draft content!
@@ -17,3 +17,5 @@ export default async (req, res) => {
   res.writeHead(307, { Location: "/" });
   res.end();
 };
+
+export default enterPreviewMode;

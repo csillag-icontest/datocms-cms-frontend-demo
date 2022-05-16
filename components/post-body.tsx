@@ -17,12 +17,13 @@ export default function PostBody(props: PostBodyProps) {
           data={content}
           renderBlock={({ record }) => {
             if (record.__typename === "ImageBlockRecord") {
+              // eslint-disable-next-line jsx-a11y/alt-text
               return <Image data={record.image.responsiveImage} />;
             }
 
             return (
               <>
-                <p>Don't know how to render a block!</p>
+                <p>Unable to render a block!</p>
                 <pre>{JSON.stringify(record, null, 2)}</pre>
               </>
             );

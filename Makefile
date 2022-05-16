@@ -16,3 +16,6 @@ build:
 
 clean:
 	rm -rf node_modules
+
+lint: install-deps
+	./node_modules/.bin/next lint
