@@ -11,5 +11,8 @@ install-deps:
 dev: install-deps
 	$(NPM) run dev
 
+build:
+	$(NPM) run build
+
 clean:
 	rm -rf node_modules
