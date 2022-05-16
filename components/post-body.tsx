@@ -1,7 +1,11 @@
-import { StructuredText, Image } from "react-datocms";
+import {
+  StructuredText,
+  Image,
+  StructuredTextGraphQlResponse,
+} from "react-datocms";
 
 interface PostBodyProps {
-  content: any; // TODO: find out real type
+  content: StructuredTextGraphQlResponse<any>; // TODO: find out real type
 }
 
 export default function PostBody(props: PostBodyProps) {

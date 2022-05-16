@@ -1,8 +1,10 @@
-import { Image } from "react-datocms";
+import { Image, ResponsiveImageType } from "react-datocms";
 
 interface AvatarProps {
   name: string;
-  picture: any; // TODO: find out real type
+  picture: {
+    responsiveImage: ResponsiveImageType;
+  };
 }
 
 export default function Avatar(props: AvatarProps) {
@@ -11,8 +13,10 @@ export default function Avatar(props: AvatarProps) {
     <div className="flex items-center">
       <div className="w-12 h-12 mr-4">
         <Image
-          alt={name}
-          data={picture.responsiveImage}
+          data={{
+            ...picture.responsiveImage,
+            alt: name,
+          }}
           className="rounded-full"
         />
       </div>

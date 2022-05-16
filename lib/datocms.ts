@@ -1,6 +1,13 @@
 import tiny from "tiny-json-http";
 
-export async function request({ query, variables, preview }) {
+interface DatoCMSGraphqlRequest {
+  query: any;
+  variables?: any;
+  preview?: any;
+}
+
+export async function request(req: DatoCMSGraphqlRequest) {
+  const { query, variables, preview } = req;
   let endpoint = "https://graphql.datocms.com";
 
   if (process.env.NEXT_DATOCMS_ENVIRONMENT) {
