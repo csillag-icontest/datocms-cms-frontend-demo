@@ -15,5 +15,7 @@ export async function getStaticProps({ params, preview = false }) {
 
 export default function Post({ subscription, preview }) {
   const data = usePostPageDataFromGraphql(subscription);
+  // data.post.title
+  // console.log(data.post.title)
   return <PostPage preview={preview} {...data} />;
 }

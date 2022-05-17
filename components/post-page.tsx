@@ -36,6 +36,9 @@ export function PostPage(props: PostPageProps) {
             date={post.date}
             author={post.author}
           />
+          <hr />
+          This is a test text
+          <hr />
           <PostBody content={post.content} />
         </article>
         <SectionSeparator />
