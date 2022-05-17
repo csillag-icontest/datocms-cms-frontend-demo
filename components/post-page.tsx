@@ -7,8 +7,7 @@ import Container from "./container";
 import PostBody from "./post-body";
 import SectionSeparator from "./section-separator";
 import MoreStories from "./more-stories";
-import { PostData } from "../types/post-data";
-import { SiteData } from "../types/site-data";
+import { PostData, SiteData } from "../types/dato-cms-types";
 
 export interface PostPageData {
   site: SiteData;

@@ -1,6 +1,6 @@
 // Code that must be executed on the server side, in order to access DatoCMS
 
-import { request } from "./datocms";
+import { request } from "./server-connection";
 import { QueryListenerOptions } from "react-datocms";
 import {
   metaTagsFragment,
@@ -76,12 +76,10 @@ export async function getGraphQLSubscriptionForIndexPage(
 export async function getAllPostPathsFromGraphQL() {
   const data = await request({ query: `{ allPosts { slug } }` });
 
-  const result = {
+  return {
     paths: data.allPosts.map((post) => `/posts/${post.slug}`),
     fallback: false,
   };
-  console.log("Returning", result);
-  return result;
 }
 
 export interface PostGraphQLSubscriptionData {

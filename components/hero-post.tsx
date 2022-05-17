@@ -2,15 +2,10 @@ import Avatar from "./avatar";
 import Date from "./date";
 import CoverImage from "./cover-image";
 import Link from "next/link";
+import { PostData } from "../types/dato-cms-types";
 
-export default function HeroPost({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}) {
+export default function HeroPost(props: PostData) {
+  const { title, coverImage, date, excerpt, author, slug } = props;
   return (
     <section>
       <div className="mb-8 md:mb-16">

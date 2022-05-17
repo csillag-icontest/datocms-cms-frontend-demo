@@ -5,9 +5,7 @@ import Container from "./container";
 import Intro from "./intro";
 import MoreStories from "./more-stories";
 import HeroPost from "./hero-post";
-import { PostData } from "../types/post-data";
-import { SiteData } from "../types/site-data";
-import { BlogData } from "../types/blog-data";
+import { PostData, SiteData, BlogData } from "../types/dato-cms-types";
 
 export interface IndexPageData {
   allPosts: PostData[];
@@ -32,16 +30,7 @@ export function IndexPage(props: IndexPageProps) {
         <Head>{renderMetaTags(metaTags)}</Head>
         <Container>
           <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
+          {heroPost && <HeroPost {...heroPost} />}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
