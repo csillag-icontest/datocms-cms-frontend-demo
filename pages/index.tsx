@@ -1,16 +1,11 @@
-import { useIndexPageDataFromGraphql } from "@/lib/dato-cms-graphql/client";
-import { IndexPage } from "@/components/index-page";
-import {
-  getGraphQLSubscriptionForIndexPage,
-  IndexPageGraphQLSubscriptionData,
-} from "@/lib/dato-cms-graphql/server";
+import Image from "next/image";
+import openingPic from "../public/img/strong_woman.jpg";
 
-export async function getStaticProps({ preview }) {
-  return getGraphQLSubscriptionForIndexPage(preview);
-}
+export const Index = () => (
+  <div>
+    <h1>Hello, world of sports!</h1>
+    <Image src={openingPic} alt={"Strong woman competition"} />
+  </div>
+);
 
-export default function Index(props: IndexPageGraphQLSubscriptionData) {
-  const { subscription, preview } = props;
-  const data = useIndexPageDataFromGraphql(subscription);
-  return <IndexPage preview={preview} {...data} />;
-}
+export default Index;
